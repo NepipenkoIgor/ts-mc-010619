@@ -1,27 +1,15 @@
-// enum Size {
-//     S = 44,
-//     L = 48,
-//     XL = 52,
-// }
-//
-// let mySize = Size.S;
-// let mySize1 = Size[44];
+import { generateMenu } from './menu';
+import { menuList } from './menu/data';
 
-enum UserActions {
-    AddUser = 'AddUser',
-    DeleteUser = 'DeleteUser',
-    EditUser = 'EditUser',
+const element: HTMLDivElement = document.querySelector('.menu') as HTMLDivElement;
 
-    RemoveUser = DeleteUser,
-}
-
-function reducer(_state: any, action: { type: UserActions }) {
-   switch (action.type) {
-       case UserActions.AddUser: {
-           return 1;
-       }
-       case UserActions.RemoveUser: {
-           return 2;
-       }
-   }
-}
+element.innerHTML = generateMenu(menuList);
+element.addEventListener('click', (event: MouseEvent) => {
+    const el: HTMLElement = event.target as HTMLElement;
+    const {classList: cl} = el;
+    if (!cl.contains('title')) {
+        return;
+    }
+    const parentLI: HTMLLIElement = el.parentElement as HTMLLIElement;
+    parentLI.classList.toggle('menu-open');
+});
