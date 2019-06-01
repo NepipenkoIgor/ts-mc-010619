@@ -1,0 +1,16 @@
+{
+  "name": "ts-mc-010619",
+  "version": "1.0.0",
+  "description": "",
+  "main": "example.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tslint": "^5.17.0",
+    "typescript": "^3.5.1"
+  }
+}
