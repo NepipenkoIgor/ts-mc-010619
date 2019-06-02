@@ -1,5 +1,5 @@
-import { generateMenu } from './menu';
-import { menuList } from './menu/data';
+import { generateMenu } from '../old/menu';
+import { menuList } from '../old/menu/data';
 
 const element: HTMLDivElement = document.querySelector('.menu') as HTMLDivElement;
 
